@@ -26,8 +26,9 @@ if [ $? = 0 ]; then
 	log "clone sucessful !!";
 else
 	log "Existing files found. Backing up pre-existing dot files.";
-	mkdir -p $HOME/.dotfiles_bkp
-	dotfile checkout 2>$1 | egrep "\s+\." | awk {'print $1'} | xarg -I{} mv {} $HOME/.dotfiles_bkp/{}
+	# mkdir -p $HOME/.dotfiles_bkp
+	dotfile checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} dirname {} | uniq | xargs -I{} mkdir -p $HOME/.dotfiles_bkp/{}
+	dotfile checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} $HOME/.dotfiles_bkp/{}
 	log "clone sucessful !!";
 fi;
 dotfile checkout
