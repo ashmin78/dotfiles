@@ -13,9 +13,7 @@ echo "=================================================="
 echo "=================================================="
 echo "cloning dotfiles"
 git clone --bare https://github.com/ashmin78/dotfiles.git $HOME/dotfiles
-function dotfile{
-	/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME $@
-}
+alias dotfile="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 dotfile checkout
 if [ $? = 0 ]; then
 	echo "clone sucessful !!";
