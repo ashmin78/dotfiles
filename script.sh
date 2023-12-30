@@ -10,7 +10,6 @@ sudo apt install git -y
 echo "git installation completed !!!"
 echo "=================================================="
 
-
 echo "=================================================="
 echo "cloning dotfiles"
 git clone --bare https://github.com/ashmin78/dotfiles.git $HOME/dotfiles
@@ -28,7 +27,6 @@ else
 fi;
 dotfile checkout
 echo "=================================================="
-
 
 echo "=================================================="
 echo "installing starship ..."
@@ -67,13 +65,7 @@ rm -rf ~/miniconda3/miniconda.sh
 echo "miniconda installation completed !!!"
 echo "=================================================="
 
-
-
 echo "=================================================="
-# POST installation
-~/miniconda3/bin/conda init bash
-echo 'eval "$(starship init bash)"' >> $HOME/.bashrc
-
-
-
-
+echo "running post installation work ..."
+# ~/miniconda3/bin/conda init bash
+# echo 'eval "$(starship init bash)"' >> $HOME/.bashrc
