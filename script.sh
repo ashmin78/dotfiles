@@ -1,22 +1,24 @@
+#!/bin/bash
+
 sudo apt update -y
+function log(){
+	log_dir=$HOME/.initial_setuup.log
+	touch $log
+ 	echo $@ | tee -a $log_dir
+}
 
-tmp_dir='/tmp/temp_install'
-mkdir $tmp_dir
-cd $tmp_dir
-
-
-echo "=================================================="
-echo "installing utilities ..."
+log "==================================================" 
+log "installing utilities ..."
 sudo apt install -y git
 sudo apt install -y ranger
 sudo apt install -y neovim
 sudo apt install -y fzf
 sudo apt install -y openssh-server
-echo "utilities installation completed !!!"
-echo "=================================================="
+log "utilities installation completed !!!"
+log "=================================================="
 
-echo "=================================================="
-echo "cloning dotfiles"
+log "=================================================="
+log "cloning dotfiles"
 git clone --bare https://github.com/ashmin78/dotfiles.git $HOME/dotfiles
 alias dotfile="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 dotfile checkout
@@ -29,25 +31,25 @@ else
 	echo "clone sucessful !!";
 fi;
 dotfile checkout
-echo "=================================================="
+log "=================================================="
 
-echo "=================================================="
-echo "installing starship ..."
+log "=================================================="
+log "installing starship ..."
 curl -sS https://starship.rs/install.sh | sh
-echo "starship installation completed !!!"
-echo "=================================================="
+log "starship installation completed !!!"
+log "=================================================="
 
-echo "=================================================="
-echo "installing brave browser ..."
+log "=================================================="
+log "installing brave browser ..."
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt update -y
 sudo apt install brave-browser -y
-echo "brave browser installation completed !!!"
-echo "=================================================="
+log "brave browser installation completed !!!"
+log "=================================================="
 
-echo "=================================================="
-echo "installing vscode ..."
+log "=================================================="
+log "installing vscode ..."
 sudo apt-get install wget gpg -y
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
@@ -56,20 +58,20 @@ rm -f packages.microsoft.gpg
 sudo apt install apt-transport-https -y
 sudo apt update -y
 sudo apt install code -
-echo "vscode installation completed !!!"
-echo "=================================================="
+log "vscode installation completed !!!"
+log "=================================================="
 
-echo "=================================================="
-echo "installing miniconda ..."
+log "=================================================="
+log "installing miniconda ..."
 mkdir -p ~/miniconda3
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
 bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm -rf ~/miniconda3/miniconda.sh
-echo "miniconda installation completed !!!"
-echo "=================================================="
+log "miniconda installation completed !!!"
+log "=================================================="
 
-echo "=================================================="
-echo "running post installation work ..."
+log "=================================================="
+log "running post installation work ..."
 # ~/miniconda3/bin/conda init bash
 # echo 'eval "$(starship init bash)"' >> $HOME/.bashrc
 echo 'alias dotfile="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"' >> $HOME/.bashrc
