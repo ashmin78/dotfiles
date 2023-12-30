@@ -1,0 +1,33 @@
+[directory]
+read_only = " "
+
+[git_branch]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "ﳒ "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[spack]
+symbol = "🅢 "
