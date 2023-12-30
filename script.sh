@@ -3,7 +3,6 @@
 sudo apt update -y
 function log(){
 	log_dir=$HOME/.initial_setuup.log
-	touch $log
  	echo $@ | tee -a $log_dir
 }
 
