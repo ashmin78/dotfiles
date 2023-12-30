@@ -1,0 +1,81 @@
+{
+    "terminal.integrated.inheritEnv": false,
+    "editor.inlineSuggest.enabled": true,
+    "workbench.editorAssociations": {
+        "*.csv": "default",
+        "*.md": "default",
+        "git-rebase-todo": "gitlens.rebase"
+    },
+    "jupyter.askForKernelRestart": false,
+    "files.autoSaveDelay": 500,
+    "explorer.confirmDelete": false,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "yaml": false,
+        "python": true,
+        "html": true
+    },
+    "editor.minimap.enabled": false,
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
+    "notebook.lineNumbers": "on",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "workbench.colorTheme": "Andromeda Bordered",
+    // "workbench.iconTheme": "eq-material-theme-icons",
+    "terminal.integrated.cursorStyle": "line",
+    "editor.guides.bracketPairs": true,
+    "[python]": {
+        "editor.formatOnType": true,
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        // "editor.codeActionsOnSave": {
+        //     "source.organizeImports.ruff": "explicit",
+        // },
+    },
+    "liveServer.settings.donotShowInfoMsg": true,
+    "window.menuBarVisibility": "toggle",
+    "mssql.connections": [
+        {
+            "server": "localhost,1433",
+            "database": "",
+            "authenticationType": "SqlLogin",
+            "user": "SA",
+            "password": "",
+            "emptyPasswordInput": false,
+            "savePassword": true,
+            "encrypt": "Mandatory",
+            "trustServerCertificate": true,
+            "connectTimeout": 15,
+            "commandTimeout": 30,
+            "applicationName": "vscode-mssql"
+        }
+    ],
+    "security.workspace.trust.untrustedFiles": "open",
+    "window.zoomLevel": 1,
+    "gitlens.graph.minimap.additionalTypes": [
+        "localBranches",
+        "stashes",
+        "tags",
+        "remoteBranches"
+    ],
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.currentLine.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.graph.minimap.enabled": false,
+    "gitlens.views.worktrees.files.layout": "list",
+    "gitlens.graph.dimMergeCommits": true,
+    "cloudcode.duetAI.project": "weighty-planet-395416",
+    "isort.importStrategy": "fromEnvironment",
+    // "editor.defaultFormatter": "ms-python.black-formatter",
+    "vim.highlightedyank.color": "rgba(230, 97, 89, 0.7)",
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.textColor": "white",
+}
