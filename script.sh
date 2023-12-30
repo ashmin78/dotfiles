@@ -4,10 +4,15 @@ tmp_dir='/tmp/temp_install'
 mkdir $tmp_dir
 cd $tmp_dir
 
+
 echo "=================================================="
-echo "installing git ..."
-sudo apt install git -y
-echo "git installation completed !!!"
+echo "installing utilities ..."
+sudo apt install -y git
+sudo apt install -y ranger
+sudo apt install -y neovim
+sudo apt install -y fzf
+sudo apt install -y openssh-server
+echo "utilities installation completed !!!"
 echo "=================================================="
 
 echo "=================================================="
