@@ -72,3 +72,4 @@ echo "=================================================="
 echo "running post installation work ..."
 # ~/miniconda3/bin/conda init bash
 # echo 'eval "$(starship init bash)"' >> $HOME/.bashrc
+echo 'alias dotfile="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"' >> $HOME/.bashrc
